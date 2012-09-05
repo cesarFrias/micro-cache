@@ -1,6 +1,7 @@
 # coding=utf-8
-import urllib
 
+import urllib
+import os
 import mock
 import unittest
 from microcache import MicroCache
@@ -25,7 +26,9 @@ class MyTestCase(unittest.TestCase):
         def download():
             global CALL_COUNT
             CALL_COUNT += 1
-            return urllib.urlopen('https://github.com/ebertti/micro-cache').read()
+            pwd = os.path.realpath(os.path.dirname(__file__))
+            html_file = os.path.join(pwd, 'test.html')
+            return urllib.urlopen(html_file).read()
 
         microCache = MicroCache()
         v = None
