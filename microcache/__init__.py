@@ -18,12 +18,8 @@ class MicroCache(object):
         self.collections[key] = value
 
     def get(self, key, value=None):
-
-        if not self.collections.has_key(key):
-            if not value is None:
-                self.update(key, value)
-            else:
-                return None
+        if not self.collections.has_key(key) and value:
+            self.update(key, value)
         return self.collections[key]
 
     def update(self, key, value):
