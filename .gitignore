@@ -28,3 +28,6 @@ pip-log.txt
 
 #pycharm
 .idea
+
+#Vim
+*.swp
