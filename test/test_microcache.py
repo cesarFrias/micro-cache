@@ -27,7 +27,7 @@ class MyTestCase(unittest.TestCase):
             global CALL_COUNT
             CALL_COUNT += 1
             pwd = os.path.realpath(os.path.dirname(__file__))
-            html_file = os.path.join(pwd, 'test.html')
+            html_file = os.path.join(pwd, 'html_test.html')
             return urllib.urlopen(html_file).read()
 
         microCache = MicroCache()
